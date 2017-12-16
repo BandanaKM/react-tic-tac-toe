@@ -75,3 +75,16 @@ we're basically cloning an object, and assigning score in the immutable version.
 5. Determining when to rerender in React: 
 
 * The biggest benefit of immutability in React is when build simple pure components 
+
+
+
+6. Functional Components
+* We'll also change onClick={() => props.onClick()} to just onClick={props.onClick}
+* Passing down the function is enough 
+* Not that onClick={props.onClick()} would not work - it would call the function immediately instead of passing it down. 
+1. Why did we have to change the function for the functional component 
+
+
+
+7. 
+
