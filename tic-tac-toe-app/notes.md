@@ -86,5 +86,28 @@ we're basically cloning an object, and assigning score in the immutable version.
 
 
 
-7. 
+7. Let's make it posivle to revisit old states of the board, so we can see what it looked like after any of the previous moved. (see the state object in the tutorial).
+
+history = [
+{[]},
+{[]},
+]
+
+* an array, with  objects inside, that wach contain one of the square arrays. 
+* we want the top level game component to be responsible for displaying hte list of moves. so just as we pulled the state up from Square into Board, let's now pull it up again from Board into Game. 
+
+
+
+* We set up the initial state for Game by adding a constructor to it. 
+* then change Board so that it takes squares via props, and has its own onclick prop specified by Game. 
+
+
+* Why did we replace Replace this.handleClick(i) with this.props.onClick(i) in Board’s renderSquare.
+
+We need to move the handleClick method implementation from Board to game. You can cut it from the Board class, and paste it into the Game class. 
+* Games handleClick can push a new entry onto the stack by concatenating the new history entry to make a new history array.  
+
+
+* WE also need to change little, since Game state is structured differently. * Game's handleClick can push a new entry onto the state by concatenating the new history entry to make a new history array.
+* at this point, Board only needs renderSquare and render, the state initialization and click handler should both live in Game. 
 
