@@ -86,7 +86,11 @@ we're basically cloning an object, and assigning score in the immutable version.
 
 
 
-7. Let's make it posivle to revisit old states of the board, so we can see what it looked like after any of the previous moved. (see the state object in the tutorial).
+
+Storing the History
+
+
+1. Let's make it posivle to revisit old states of the board, so we can see what it looked like after any of the previous moved. (see the state object in the tutorial).
 
 history = [
 {[]},
@@ -110,4 +114,11 @@ We need to move the handleClick method implementation from Board to game. You ca
 
 * WE also need to change little, since Game state is structured differently. * Game's handleClick can push a new entry onto the state by concatenating the new history entry to make a new history array.
 * at this point, Board only needs renderSquare and render, the state initialization and click handler should both live in Game. 
+
+
+2. Showing the Moves
+
+* Let's show the previous moves made in the game so far. We learned that React elements are first class JavaScript objects, and we can story them or pass them around. 
+* To render multiple items in React, we pass an array of React elements. 
+* The most common way to build that array is to map over your array of data. 
 
